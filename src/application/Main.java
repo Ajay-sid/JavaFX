@@ -1,12 +1,15 @@
 package application;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
 public class Main extends Application {
@@ -18,8 +21,15 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		//creating a root node
-		Group root = new Group();
+		//Group root = new Group();
+		GridPane root = new GridPane();
+		root.setAlignment(Pos.CENTER);
+		root.setHgap(10);
+		root.setVgap(10);
 		//adding a root to scene
+		
+		Label greeting = new Label("Welcome");
+		root.getChildren().add(greeting);
 		Scene scene = new Scene(root,Color.BLACK);
 		Image icon = new Image("icon.png");
 		stage.setHeight(500);
